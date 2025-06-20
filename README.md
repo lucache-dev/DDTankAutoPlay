@@ -4,7 +4,7 @@ A Python automation to play and complete Tasks on DDTank (Web Game) for you
 - It starts and play 1v1 matches in loop
 - It starts and play 2v2 matches in loop. (Needed to your partner to be using the same script)
 
-![image](https://github.com/user-attachments/assets/45784dac-c83a-4afe-ad2b-4338c6726e2d)
+![image](https://github.com/user-attachments/assets/b358115e-2128-4856-8741-d99a0ec2937e)
 
 
 
