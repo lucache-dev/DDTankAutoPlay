@@ -29,7 +29,7 @@ try:
         [sg.Button('Auto Click mode', font=('Roboto', 10), size=(15,1), key='auto_click_mode', tooltip="Active auto click to upgrade your cards")]
     ]
 
-    right_first_line = [sg.Image(filename='assets\client_img.png')]
+    right_first_line = [sg.Image(filename='assets/client_img.png')]
     right_margin_line = [sg.Text("", size=(1, 3))]
     right_second_line = [sg.Button('Start', font=('Roboto', 15), size=(14, 3), key='start_button')]
 
@@ -41,7 +41,7 @@ try:
         sg.Column(right_column, size=(300, 400), justification='center', element_justification='center')]
     ]
 
-    window = sg.Window('DDtank Auto Play', layout, icon=('assets\icon.ico'))
+    window = sg.Window('DDtank Auto Play', layout, icon=('assets/icon.ico'))
     
     while True:             
         event, values = window.read()

@@ -8,8 +8,8 @@ class AutoPlay:
         timer = time.time()
         is_your_turn = False
         while not is_your_turn and time.time() - timer < 180:
-            your_turn_img = pyautogui.locateOnScreen('images/your_turn.png', confidence=0.5)
-            pass_img = pyautogui.locateOnScreen('images/pass.png', confidence=0.5)
+            your_turn_img = pyautogui.locateOnScreen('assets/images/your_turn.png', confidence=0.5)
+            pass_img = pyautogui.locateOnScreen('assets/images/pass.png', confidence=0.5)
             is_your_turn = your_turn_img != None or pass_img != None
             if is_your_turn:
                 print('NOW IS YOUR TURN')
@@ -28,22 +28,22 @@ class AutoPlay:
         return
 
     def check_if_match_is_finish(self):
-        end_game_img = pyautogui.locateOnScreen('images\end_game.png', confidence=0.5)
-        lobby_img = pyautogui.locateOnScreen('images/start_queue.png', confidence=0.5)
+        end_game_img = pyautogui.locateOnScreen('assets\images\end_game.png', confidence=0.5)
+        lobby_img = pyautogui.locateOnScreen('assets/images/start_queue.png', confidence=0.5)
 
         return end_game_img != None or lobby_img != None
 
     def start_queue(self):
         while True:
-            ready_button = pyautogui.locateOnScreen('images/start_queue.png', confidence=0.5)
+            ready_button = pyautogui.locateOnScreen('assets/images/start_queue.png', confidence=0.5)
             if ready_button != None:
                 pyautogui.leftClick(ready_button)
-                searching_game = pyautogui.locateOnScreen('images\searching_solo_game.png', confidence=0.5)
-                searching_gvg = pyautogui.locateOnScreen('images\searching_gvg.png', confidence=0.5)
+                searching_game = pyautogui.locateOnScreen('assets\images\searching_solo_game.png', confidence=0.5)
+                searching_gvg = pyautogui.locateOnScreen('assets\images\searching_gvg.png', confidence=0.5)
                 if searching_game or searching_gvg != None:
                     time.sleep(2)
-                    searching_game = pyautogui.locateOnScreen('images\searching_solo_game.png', confidence=0.5)
-                    searching_gvg = pyautogui.locateOnScreen('images\searching_gvg.png', confidence=0.5)
+                    searching_game = pyautogui.locateOnScreen('assets\images\searching_solo_game.png', confidence=0.5)
+                    searching_gvg = pyautogui.locateOnScreen('assets\images\searching_gvg.png', confidence=0.5)
                     if searching_game or searching_gvg != None:
                         print('Queue Started')
                         break
@@ -51,11 +51,11 @@ class AutoPlay:
 
     def set_ready(self):
         while True:
-            ready_button = pyautogui.locateOnScreen('images/ready_queue.png', confidence=0.7)
+            ready_button = pyautogui.locateOnScreen('assets/images/ready_queue.png', confidence=0.7)
             if ready_button != None:
                 pyautogui.leftClick(ready_button)
                 time.sleep(2)
-                searching_gvg = pyautogui.locateOnScreen('images\searching_gvg.png', confidence=0.5)
+                searching_gvg = pyautogui.locateOnScreen('assets\images\searching_gvg.png', confidence=0.5)
                 if searching_gvg != None:
                     print('Queue Started')
                     break
@@ -64,7 +64,7 @@ class AutoPlay:
     def wait_load(self):
         match_is_started = False
         while not match_is_started: 
-            image_coordinates = pyautogui.locateOnScreen('images\loading_screen.png', confidence=0.5)
+            image_coordinates = pyautogui.locateOnScreen('assets\images\loading_screen.png', confidence=0.5)
             match_is_started = image_coordinates != None
             if match_is_started:
                 print('Match Starting')
