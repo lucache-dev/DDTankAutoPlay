@@ -58,5 +58,5 @@ pip install -r requirements.txt
 ##### Running the Project
 
 ```bash
-python openPage.py
+python3 main.py
 ```
